@@ -4,9 +4,10 @@ RUN apt-get update \
  && apt-get -y install build-essential git unzip ruby ruby-dev \
         libxml2-dev libxslt-dev libcurl4-openssl-dev pkg-config \
         build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev \
-        libsqlite3-dev cmake libxml2 zlibc zlib1g-dev openssl \
+        libsqlite3-dev cmake libxml2 zlibc zlib1g-dev openssl golang \
         libreadline6 sqlite3 curl wget jq ca-certificates \
- && apt-get clean
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 # install bosh-init
 RUN wget 'https://s3.amazonaws.com/bosh-init-artifacts/bosh-init-0.0.81-linux-amd64' \
