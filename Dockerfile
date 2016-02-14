@@ -38,3 +38,21 @@ RUN gem install rake -v 10.5.0 --no-rdoc --no-ri
 RUN gem install thor -v 0.19.1 --no-rdoc --no-ri
 RUN gem install etcd -v 0.3.0 --no-rdoc --no-ri
 RUN gem install mechanize -v 2.7.4 --no-rdoc --no-ri
+
+# go env
+ENV GOPATH=/gopath
+ENV PATH=/gopath/bin:$PATH
+
+# install go packages
+RUN go get golang.org/x/tools/cmd/vet \
+ && go get golang.org/x/tools/cmd/cover \
+ && go get golang.org/x/tools/cmd/goimports \
+ && go get golang.org/x/tools/cmd/oracle \
+ && go get golang.org/x/tools/cmd/gorename \
+ && go get github.com/golang/lint/golint \
+ && go get github.com/tools/godep \
+ && go get github.com/jteeuwen/go-bindata/... \
+ && go get github.com/stretchr/testify/assert \
+ && go get github.com/onsi/ginkgo/ginkgo \
+ && go get github.com/onsi/gomega \
+ && go get github.com/mitchellh/gox
