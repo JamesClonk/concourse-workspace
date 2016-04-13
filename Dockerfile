@@ -5,7 +5,7 @@ RUN apt-get update \
         libxml2-dev libxslt-dev libcurl4-openssl-dev pkg-config \
         build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev \
         libsqlite3-dev cmake libxml2 zlibc zlib1g-dev openssl golang \
-        libreadline6 sqlite3 curl wget jq ca-certificates \
+        libreadline6 sqlite3 curl wget jq ca-certificates file \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -30,9 +30,9 @@ RUN wget -O cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary
 
 # install bosh-workspace
 RUN gem install bundler --no-rdoc --no-ri
-RUN gem install bosh_cli -v 1.3189.0 --no-rdoc --no-ri
-RUN gem install bosh_cli_plugin_micro -v 1.3189.0 --no-rdoc --no-ri
-RUN gem install bosh-workspace -v 0.9.10 --no-rdoc --no-ri
+RUN gem install bosh_cli -v 1.3215.3.0 --no-rdoc --no-ri
+RUN gem install bosh_cli_plugin_micro -v 1.3215.3.0 --no-rdoc --no-ri
+RUN gem install bosh-workspace -v 0.9.11 --no-rdoc --no-ri
 RUN gem install cf-uaac -v 3.1.6 --no-rdoc --no-ri
 RUN gem install rake -v 10.5.0 --no-rdoc --no-ri
 RUN gem install thor -v 0.19.1 --no-rdoc --no-ri
