@@ -44,9 +44,7 @@ ENV GOPATH=/gopath
 ENV PATH=/gopath/bin:$PATH
 
 # install go packages
-RUN go get golang.org/x/tools/cmd/vet \
- && go get golang.org/x/tools/cmd/cover \
- && go get golang.org/x/tools/cmd/goimports \
+RUN go get golang.org/x/tools/cmd/goimports \
  && go get golang.org/x/tools/cmd/oracle \
  && go get golang.org/x/tools/cmd/gorename \
  && go get github.com/golang/lint/golint \
