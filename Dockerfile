@@ -1,7 +1,7 @@
 FROM ubuntu:15.10
 
 RUN apt-get update \
- && apt-get -y install build-essential git unzip ruby ruby-dev \
+ && apt-get -y install build-essential git unzip ruby ruby-dev vim \
         libxml2-dev libxslt-dev libcurl4-openssl-dev pkg-config \
         build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev \
         libsqlite3-dev cmake libxml2 zlibc zlib1g-dev openssl golang \
