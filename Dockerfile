@@ -30,7 +30,7 @@ RUN wget -O cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary
 
 # install spruce
 RUN wget 'https://github.com/swisscom/spruce/releases/download/dev/spruce' \
-  && mv spruce /usr/local/bin/spruce
+  && mv spruce /usr/local/bin/spruce \
   && chmod u+x /usr/local/bin/spruce
 
 # install bosh-workspace
