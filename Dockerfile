@@ -5,7 +5,8 @@ RUN apt-get update \
         libxml2-dev libxslt-dev libcurl4-openssl-dev pkg-config libfontconfig1 \
         build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev \
         libsqlite3-dev cmake libxml2 zlibc zlib1g-dev openssl golang zip \
-        libreadline6 sqlite3 curl wget jq ca-certificates file dnsutils \
+        libreadline6 sqlite3 curl wget jq ca-certificates file \
+        iptables dnsutils \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
