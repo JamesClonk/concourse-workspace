@@ -9,9 +9,16 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+# install docker
+RUN wget 'https://get.docker.com/builds/Linux/x86_64/docker-1.11.0.tgz' \
+ && tar -zxf docker-1.11.0.tgz \
+ && mv docker/* /usr/local/bin/. \
+ && chmod u+x /usr/local/bin/docker*
+RUN /usr/local/bin/docker --version
+
 # install bosh-init
-RUN wget 'https://s3.amazonaws.com/bosh-init-artifacts/bosh-init-0.0.88-linux-amd64' \
- && mv bosh-init-0.0.88-linux-amd64 /usr/local/bin/bosh-init \
+RUN wget 'https://s3.amazonaws.com/bosh-init-artifacts/bosh-init-0.0.94-linux-amd64' \
+ && mv bosh-init-0.0.94-linux-amd64 /usr/local/bin/bosh-init \
  && chmod u+x /usr/local/bin/bosh-init
 
 # install spiff
@@ -22,15 +29,15 @@ RUN wget 'https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0
  && rm -f spiff_linux_amd64.zip
 
 # install cf-cli
-RUN wget -O cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.17.1&source=github-rel' \
- && tar -xvzf cf-cli.tgz \
+RUN wget -O cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.19.0&source=github-rel' \
+ && tar -xzf cf-cli.tgz \
  && mv cf /usr/local/bin/cf \
  && chmod u+x /usr/local/bin/cf \
  && rm -f cf-cli.tgz
 
 # install spruce
-RUN wget 'https://github.com/swisscom/spruce/releases/download/dev/spruce' \
-  && mv spruce /usr/local/bin/spruce \
+RUN wget 'https://github.com/geofffranks/spruce/releases/download/v1.5.0/spruce-linux-amd64' \
+  && mv spruce-linux-amd64 /usr/local/bin/spruce \
   && chmod u+x /usr/local/bin/spruce
 
 # install bosh-workspace
