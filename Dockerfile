@@ -55,6 +55,7 @@ RUN gem install mechanize -v 2.7.4 --no-rdoc --no-ri
 # go env
 ENV GOPATH=/gopath
 ENV PATH=/gopath/bin:$PATH
+ENV TERM=xterm
 
 # install go packages
 RUN go get golang.org/x/tools/cmd/goimports \
