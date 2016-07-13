@@ -6,7 +6,7 @@ RUN apt-get update \
         build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev \
         libsqlite3-dev cmake libxml2 zlibc zlib1g-dev openssl golang zip \
         libreadline6 sqlite3 curl wget jq ca-certificates file \
-        iptables dnsutils \
+        iptables dnsutils uuid-runtime \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
