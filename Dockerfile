@@ -30,23 +30,23 @@ RUN wget 'https://github.com/cloudfoundry-incubator/spiff/releases/download/v1.0
  && rm -f spiff_linux_amd64.zip
 
 # install cf-cli
-RUN wget -O cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.19.0&source=github-rel' \
+RUN wget -O cf-cli.tgz 'https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.21.0&source=github-rel' \
  && tar -xzf cf-cli.tgz \
  && mv cf /usr/local/bin/cf \
  && chmod u+x /usr/local/bin/cf \
  && rm -f cf-cli.tgz
 
 # install spruce
-RUN wget 'https://github.com/geofffranks/spruce/releases/download/v1.5.0/spruce-linux-amd64' \
+RUN wget 'https://github.com/geofffranks/spruce/releases/download/v1.7.0/spruce-linux-amd64' \
   && mv spruce-linux-amd64 /usr/local/bin/spruce \
   && chmod u+x /usr/local/bin/spruce
 
 # install bosh-workspace
 RUN gem install bundler --no-rdoc --no-ri
-RUN gem install bosh_cli -v 1.3232.0 --no-rdoc --no-ri
-RUN gem install bosh_cli_plugin_micro -v 1.3232.0 --no-rdoc --no-ri
-RUN gem install bosh-workspace -v 0.9.12 --no-rdoc --no-ri
-RUN gem install cf-uaac -v 3.1.6 --no-rdoc --no-ri
+RUN gem install bosh_cli -v 1.3262.4.0 --no-rdoc --no-ri
+RUN gem install bosh_cli_plugin_micro -v 1.3262.4.0 --no-rdoc --no-ri
+RUN gem install bosh-workspace -v 0.9.13 --no-rdoc --no-ri
+RUN gem install cf-uaac -v 3.3.0 --no-rdoc --no-ri
 RUN gem install rake -v 10.5.0 --no-rdoc --no-ri
 RUN gem install thor -v 0.19.1 --no-rdoc --no-ri
 RUN gem install etcd -v 0.3.0 --no-rdoc --no-ri
